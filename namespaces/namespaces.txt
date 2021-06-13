@@ -1,0 +1,6 @@
+NAMESPACES
+- Separate spaces
+- Separate rules
+
+# Get the pods on dev namespace 
+Kubectl get pods --namespace=dev
