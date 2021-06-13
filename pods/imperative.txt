@@ -1,0 +1,5 @@
+# Create a nginx pod
+kubectl run nginx --image=nginx
+
+# Generate manifest (pod.yaml) using commands
+kubectl run nginx --image=nginx --dry-run=client -o yaml > pod.yaml
