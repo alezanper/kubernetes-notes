@@ -10,3 +10,6 @@ Kubectl config set-context $(kubectl config current-context) --namespace=dev
 
 # Read all namespaces
 Kubectl get pods --all-namespaces
+
+# Run a container on a specific namespace
+kubectl run nginx --image=nginx --namespace=uat
