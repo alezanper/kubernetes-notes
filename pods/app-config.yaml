@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: app-config
 data:
-  HELLO: world
-  ENVIRONMENT: prod
+  APP_COLOR: red
+  APP_MODE: prod

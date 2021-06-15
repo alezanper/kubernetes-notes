@@ -1,11 +1,15 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ubuntu-pod
+  name: simple-webapp-color
+  labels:
+    app: myapp
 spec:
   containers:
-  - name: ubuntu
-    image: ubuntu
+  - name: simple-webapp-color
+    image: kodekloud/webapp-color
+    ports:
+      - containerPort: 8080
     env:
-      - name: HELLO
-        value: world
+      - name: APP_COLOR
+        value: pink
