@@ -6,3 +6,6 @@ kubectl run nginx --image=nginx
 
 # Generate manifest (pod.yaml) using commands
 kubectl run nginx --image=nginx --dry-run=client -o yaml > pod.yaml
+
+# Delete a pod
+kubectl delete pod nginx
