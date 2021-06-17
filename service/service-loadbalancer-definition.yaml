@@ -6,8 +6,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 80  # service port
-      targetPort: 80  # pod port
-      nodePort: 30004 # external port
+    - port: 80  # port exposed on cloud loadbalancer
+      targetPort: 8080  # pod port
   selector:
     app: myapp  # should match with labels on pod
