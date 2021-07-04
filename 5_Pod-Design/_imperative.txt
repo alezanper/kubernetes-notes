@@ -1,0 +1,3 @@
+kubectl get jobs
+
+kubectl logs <job_name>
