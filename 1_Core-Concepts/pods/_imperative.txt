@@ -14,3 +14,4 @@ kubectl run redis --image=redis:alpine --dry-run=client -o yaml > redis.yaml
 kubectl delete pod nginx
 
 kubectl get pod webapp -o yaml > my-new-pod.yaml
+
