@@ -12,6 +12,7 @@ spec:
     - mountPath: /opt
       name: data-volume
 
+
   volumes:
   - name: data-volumes
     hostPath:
