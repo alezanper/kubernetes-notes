@@ -1,3 +1,8 @@
 kubectl get jobs
 
 kubectl logs <job_name>
+
+kubectl get pods --selector env=dev
+kubectl get pods --selector bu=finance
+kubectl get all --selector env=prod
+kubectl get all --selector env=prod,bu=finance,tier=frontend	# keep commas without spaces
