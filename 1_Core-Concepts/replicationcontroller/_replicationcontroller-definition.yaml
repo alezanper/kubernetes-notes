@@ -19,4 +19,6 @@ spec:
   replicas: 3
 
   # kubectl create -f replicationcontroller-definition.yaml
+  # kubectl delete -f replicationcontroller-definition.yaml
+
   # kubectl get replicationcontroller

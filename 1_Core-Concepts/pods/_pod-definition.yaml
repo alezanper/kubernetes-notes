@@ -11,3 +11,4 @@ spec:
       image: nginx
 
 # kubectl apply -f pod-definition.yml
+# kubectl delete -f pod-definition.yml
