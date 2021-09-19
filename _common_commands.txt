@@ -1,26 +1,32 @@
+# Create aliases
 alias k=kubectl
 
+# Set namespace
+Kubectl config set-context $(kubectl config current-context) --namespace=<namespace_name>
+
+# Create from definitions
 kubectl apply -f <file_definition.yaml>
 kubectl delete -f <file_definition.yaml>
 
-kubectl get all
+# Get all objects
+kubectl get all --all-namespaces
 
+# objects
+pod, service, deployment, replicaset
+
+# Describe
 kubectl describe <object> <object_name>
-kubectl delete <object> <object_name>
 
-kubectl get pods
-kubectl get deployments
-kubectl get replicaset
-kubectl get services
+# Delete
+kubectl delete pod <object_name>
 
-Igual??
-kubectl get pods -w
-kubectl get pods -o wide
+# Get (-o wide) (-w)
+kubectl get <object>
 
+# Scale
 kubectl scale deployment <deployment_name> --replicas=6
 
 You can think of Helm Charts as parameterized Kubernetes YAML files
-
 
 kubectl get events | grep ReplicaSet
 
