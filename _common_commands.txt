@@ -1,0 +1,28 @@
+alias k=kubectl
+
+kubectl apply -f <file_definition.yaml>
+kubectl delete -f <file_definition.yaml>
+
+kubectl get all
+
+kubectl describe <object> <object_name>
+kubectl delete <object> <object_name>
+
+kubectl get pods
+kubectl get deployments
+kubectl get replicaset
+kubectl get services
+
+Igual??
+kubectl get pods -w
+kubectl get pods -o wide
+
+kubectl scale deployment <deployment_name> --replicas=6
+
+You can think of Helm Charts as parameterized Kubernetes YAML files
+
+
+kubectl get events | grep ReplicaSet
+
+kubectl get nodes
+
