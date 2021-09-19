@@ -24,6 +24,8 @@ az network application-gateway create \
 # Get Gateway Id
 appgwId=$(az network application-gateway show -n "$ProjectName-gateway" -g $ResourceGroupName -o tsv --query "id")
 
+# Create Aks
+az aks create --resource-group rg --name myAKSCluster --node-count 1 --generate-ssh-keys --vnet-subnet-id completarrrr
 
 
 # bash create_infrastructure.sh
