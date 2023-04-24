@@ -1,3 +1,0 @@
-kubectl get persistentvolume
-kubectl get persistentvolumeclaim
-kubectl delete persistentvolumeclaim myclaim
