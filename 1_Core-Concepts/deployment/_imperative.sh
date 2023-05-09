@@ -3,16 +3,16 @@
 #################
 
 # Create a deployment
-kubectl create deployment nginx --image=nginx
+kubectl create deployment <deployment-name> --image=nginx
  
 # Generate Deployment with 4 Replicas
-kubectl create deployment nginx --image=nginx --replicas=4
+kubectl create deployment <deployment-name> --image=nginx --replicas=4
  
 # You can also scale a deployment using the kubectl scale command.
-kubectl scale deployment nginx --replicas=4
+kubectl scale deployment <deployment-name> --replicas=4
 
 # Generate Deployment YAML file (-o yaml). Don't create it (--dry-run)
-kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > deployment.yaml
+kubectl create deployment --image=nginx <deployment-name> --dry-run=client -o yaml > deployment.yaml
 
 # Create a deployment on a specific namespace
-kubectl create deployment redis-deploy --image=redis --replicas=2 --namespace=dev-ns
+kubectl create deployment <deployment-name> --image=redis --replicas=2 --namespace=dev-ns

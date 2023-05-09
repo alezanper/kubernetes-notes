@@ -29,6 +29,7 @@ spec:
 # kubectl scale --replicas=6 -f replicaset-definition.yaml
 # kubectl scale --replicas=6 replicaset myapp-replicaset
 # kubectl delete replicaset myapp-replicaset
+# kubectl delete replicaset replicaset1 replicaset2   (you can delete several replicasets at the same time)
 
 # There are not allowed extra pods with the same label that replicaset is using
 # kubectl edit replicaset myapp-replicaset   (to modify a running replicaset)
