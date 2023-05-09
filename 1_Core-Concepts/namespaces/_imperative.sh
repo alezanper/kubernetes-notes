@@ -1,3 +1,5 @@
+kubectl create namespace dev-ns
+
 NAMESPACES
 - Separate spaces
 - Separate rules
