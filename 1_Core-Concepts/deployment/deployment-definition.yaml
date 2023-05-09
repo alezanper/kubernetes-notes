@@ -4,7 +4,7 @@ metadata:
   name: myapp-deployment
   labels:
     app: myapp
-    type: front-end
+    type: front-end   # must match with the pod definition
 spec:
   template:
     metadata:
