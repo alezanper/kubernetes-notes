@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: default
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      name: nginx
+  strategy:
+    type: Recreate  # If the image is changed, the whole deployment will be deleted and recreated with the new version
+  template:
+    metadata:
+      labels:
+        name: nginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx.container

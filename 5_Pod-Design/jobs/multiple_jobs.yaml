@@ -3,6 +3,8 @@ kind: Job
 metadata:
   name: math-add-pod
 spec:
+  completions: 3			# creates 3 pods one by one until 3 are complete sucessfully
+  parallelism: 3			# this allows to create at the same time all pods
   template:
     spec:
       containers:

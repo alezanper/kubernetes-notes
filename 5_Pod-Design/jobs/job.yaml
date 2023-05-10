@@ -1,10 +1,10 @@
+# in the case of kubernetes when the container finish it is restarted because k8s was designed to run the containers forever. 
+# This is configured on the restart policy that is by default always.
 apiVersion: batch/v1
 kind: Job
 metadata:
   name: math-add-pod
 spec:
-  completions: 3			# it will create three pods
-  parallelism: 3			# this allows to create at the same time all pods
   template:
     spec:
       containers:
