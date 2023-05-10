@@ -1,0 +1,17 @@
+# Mapping a port on the node with a port on the pod
+# Nodeports can be between 30000 - 32767
+# If there are pods on different nodes, k8s automatically will create the service across node using the same port.
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  type: NodePort
+  ports:
+    - port: 80  # service port
+      targetPort: 80  # pod port
+      nodePort: 30004 # external port on node
+  selector:
+    app: myapp  # should match with labels on pods to route traffic
+  

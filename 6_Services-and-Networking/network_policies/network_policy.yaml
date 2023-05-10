@@ -1,4 +1,8 @@
-# by default all pods can communicate with each other
+# By default all allow traffic is configured
+# a network policy is other object linked to a pod
+# a policy allows traffic on specific port and block the rest
+# labels are used to match pods with network policies
+
 
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -20,14 +24,14 @@ spec:
         matchLabels:
           name: prod
     - ipBlock:
-        cidr: 192.168.5.10/32   # allow that ip 
+        cidr: 192.168.5.10/32   # allows only this specific ip 
     ports:
     - protocol: TCP
       port: 3306
   egress:
   - to:
     - ipBlock:
-        cidr: 192.168.5.10/32   # allow out traffic
+        cidr: 192.168.5.10/32   # allow the out traffic to this specific ip
     ports:
     - protocol: TCP
       port: 80
