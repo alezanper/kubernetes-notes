@@ -1,0 +1,31 @@
+#################
+# STATEFUL SETS #
+#################
+# similar to deployments
+# can scale
+# run in a sequential order
+# each pod has a unique name with a sequential name and not random
+# ordered, grateful deployment
+# example:
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+spec:
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mysql
+  serviceName: mysql-h
+  podManagementPolicy: Parallel	# not to follow an order
