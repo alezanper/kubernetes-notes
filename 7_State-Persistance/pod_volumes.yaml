@@ -1,0 +1,31 @@
+# Volumes are considered as temporary
+# The Directory approach is not recommended for more than one pod at the same time. 
+# Data is stored on k8s cluster 
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: random-number-generator
+spec:
+  containers:
+  - image: alpine
+    name: alpine
+    command: ["/bin/sh", "-c"]
+    args: ["shuf -i 0-100 -n 1 >> /opt/number.out;"]
+    volumeMounts:
+    - mountPath: /opt
+      name: data-volume
+
+  volumes:
+  - name: data-volumes
+    hostPath:
+      path: /data
+      type: Directory
+
+# an AWS solution could be implemented and attached using:
+
+# volumes:
+# - name: data-volume
+#   awsElasticBlockStorage:
+#     volumeID: <volume-id>
+#     fsType: ext4

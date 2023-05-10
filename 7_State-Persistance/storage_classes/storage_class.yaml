@@ -1,0 +1,12 @@
+# The static provision for disks are provided on k8s with the definition file and the on the cloud the disk must be create manually too
+# To create dynamic the pv and the storage on the cloud you can use storage classes:
+
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: google-storage
+provisioner: kubernetes.io/gce-pd
+parameters:			# additional parameters
+  type: pd-standard
+  replication-type: none

@@ -1,0 +1,6 @@
+kubectl get persistentvolume
+kubectl get persistentvolumeclaim
+kubectl delete persistentvolumeclaim myclaim
+
+kubectl get storageclasses
+kubectl describe storageclasses

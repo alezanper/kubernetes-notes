@@ -1,6 +1,6 @@
 # The persistent volume is a cluster of volumes that applications can use
 # It shouldn't be use on prod environment
-
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -10,8 +10,5 @@ spec:
     - ReadWriteOnce
   capacity:
     store: 1Gi
-  hostPath:
+  hostPath:     # not recommended for production environments
     path: /tmp/data
-  awsElasticBlockStore:
-    volumeID: <VOLUME-ID>
-    fsType: ext4

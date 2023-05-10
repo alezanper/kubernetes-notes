@@ -1,0 +1,15 @@
+# In this case the volume must be created first on aws
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-vol1
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  persistentVolumeReclaimPolicy: Retain   # could be retain, delete and recycle
+  awsElasticBlockStore:
+    volumeID: <volume-id>
+    fsType: ext4
