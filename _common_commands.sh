@@ -32,3 +32,14 @@ kubectl get events | grep ReplicaSet
 
 kubectl get nodes
 
+# Official documentation
+https://kubernetes.io/docs/reference/kubectl/conventions/
+
+
+kubectl [command] [TYPE] [NAME] -o <output_format>
+
+Here are some of the commonly used formats:
+-o jsonOutput a JSON formatted API object.
+-o namePrint only the resource name and nothing else.
+-o wideOutput in the plain-text format with any additional information.
+-o yamlOutput a YAML formatted API object.
