@@ -1,5 +1,8 @@
 kubectl create namespace dev-ns
 
+# get namespaces
+kubectl get ns
+
 NAMESPACES
 - Separate spaces
 - Separate rules

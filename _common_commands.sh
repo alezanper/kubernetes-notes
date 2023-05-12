@@ -1,5 +1,6 @@
 # Create aliases
 alias k=kubectl
+export do="--dry-run=client -o yaml"    # k create deploy nginx --image=nginx $do
 
 # Set namespace
 Kubectl config set-context $(kubectl config current-context) --namespace=<namespace_name>
