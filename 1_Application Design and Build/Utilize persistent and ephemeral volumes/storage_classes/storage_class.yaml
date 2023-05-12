@@ -7,6 +7,7 @@ kind: StorageClass
 metadata:
   name: google-storage
 provisioner: kubernetes.io/gce-pd
+
 parameters:			# additional parameters
   type: pd-standard
   replication-type: none
