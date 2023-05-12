@@ -17,7 +17,7 @@ helm repo update
 helm search repo nginx
 
 # upgrade a release
-helm -n <namespace> upgrade <release> bitnami/nginx
+helm -n <namespace> upgrade <release-name> bitnami/nginx
 
 # Check values from a package
 helm show values bitnami/apache
