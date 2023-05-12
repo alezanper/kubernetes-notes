@@ -15,3 +15,6 @@ spec:
         command:
           - cat
           - /app/is_ready
+      initialDelaySeconds: 10
+      periodSeconds: 5
+      failureThreshold: 8
