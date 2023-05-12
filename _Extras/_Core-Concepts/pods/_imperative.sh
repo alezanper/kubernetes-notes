@@ -10,6 +10,9 @@ kubectl run httpd --image=httpd:alpine
 kubectl run nginx --image=nginx --dry-run=client -o yaml > pod.yaml
 kubectl run redis --image=redis:alpine --dry-run=client -o yaml > redis.yaml
 
+export do="--dry-run=client -o yaml" 
+kubectl run redis --image=redis:alpine $do > redis.yaml
+
 # Delete a pod
 kubectl delete pod nginx
 
