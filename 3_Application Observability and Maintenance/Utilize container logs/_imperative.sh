@@ -9,3 +9,6 @@ kubectl logs -f event-simulator-pod
 
 #With multiple container in the same pod the command should look like:
 kubectl logs -f event-simulator-pod event-simulator
+
+# Get logs from service
+kubectl -n <namespace> logs <service.name>

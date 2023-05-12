@@ -31,3 +31,9 @@ kubeclt -n <namespace> delete pod <pod-name> --force --grace-period=0
 
 # check for errors 
 kubectl -n <namespace> describe pod <pod-name> | grep -i error
+
+# create a pod using labels
+kubeclt -n <namespace> run <podname> --image=nginx --labels: project=best
+
+# create a pod that run a curl 
+kubectl run <podname> --restart=never --rm --image=nginx_alpine -i -- curl <endpoint>:<port>
