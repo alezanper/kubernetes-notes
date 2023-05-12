@@ -22,3 +22,12 @@ kubectl get pod webapp -o yaml > my-new-pod.yaml
 # create a pod with commands 
 export do="--dry-run=client -o yaml" 
 kubectl create pod <pod-name> --image=nginx $do --command -- sh -c "touch /tmp/ready && sleep 1d" > file.yaml
+
+# Filter pod from all pods
+kubectl -n <namespace> get pod -o yaml | grep <pod-name> -A10
+
+# delete a pod quickly
+kubeclt -n <namespace> delete pod <pod-name> --force --grace-period=0
+
+# check for errors 
+kubectl -n <namespace> describe pod <pod-name> | grep -i error

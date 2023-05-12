@@ -37,9 +37,10 @@ kubectl rollout history deployment <deploymen-name> --revision=1
 kubectl set image deployment nginx nginx=nginx:1.17 --record deployment.extensions/nginx image updated
 
 # As example to rollback to a previous version use:
-kubectl rollout undo deployment/<deployment-name>
+kubectl rollout undo deployment <deployment-name>
 
 # To rollback to a specific revision use:
 kubectl rollout undo deployment nginx --to-revision=1
 
-
+# check status deployment and pod to find erros:
+kubectl -n <namespace> get deploy, pod | <deploy-name>

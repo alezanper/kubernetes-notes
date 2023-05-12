@@ -11,3 +11,5 @@ spec:
       runAsUser: 1000
       capabilities:
         add: ["MAC_ADMIN"]
+      allowPrivilegeEscalation: false
+      privileged: false
