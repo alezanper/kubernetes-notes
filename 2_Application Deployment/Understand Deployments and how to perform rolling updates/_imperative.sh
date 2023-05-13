@@ -44,3 +44,6 @@ kubectl rollout undo deployment nginx --to-revision=1
 
 # check status deployment and pod to find erros:
 kubectl -n <namespace> get deploy, pod | <deploy-name>
+
+# Restart a deployment
+kubectl -n <namespace> rollout restart deploy <deploy-name>

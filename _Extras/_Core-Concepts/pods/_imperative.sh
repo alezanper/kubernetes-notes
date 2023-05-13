@@ -37,3 +37,10 @@ kubeclt -n <namespace> run <podname> --image=nginx --labels: project=best
 
 # create a pod that run a curl 
 kubectl run <podname> --restart=never --rm --image=nginx_alpine -i -- curl <endpoint>:<port>
+
+# get pod cluster ips
+kubectl -n <namespace> get pod -o wide
+
+# See mounts on pods
+kubectl -n <namespace> describe pod <pod-name> | grep -A2 Mounts:
+
