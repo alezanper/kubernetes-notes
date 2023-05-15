@@ -5,6 +5,9 @@ kubectl expose pod redis --port=6379 --name redis-service --dry-run=client -o ya
 kubectl expose pod httpd --port=80 --name httpd
 kubectl expose pod <pod-name> --name <service-name> --port 3333  --target-port 80
 
+# Expose a Deployment
+kubectl -n <namespace> expose deploy <deploy-name> --name <service-name> --port 9000 --target-port 80
+
 # Get endpoints
 kubectl -n <namespace> get ep
 

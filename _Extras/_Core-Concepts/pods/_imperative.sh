@@ -21,6 +21,7 @@ kubectl get pod webapp -o yaml > my-new-pod.yaml
 
 # create a pod with commands 
 export do="--dry-run=client -o yaml" 
+
 kubectl create pod <pod-name> --image=nginx $do --command -- sh -c "touch /tmp/ready && sleep 1d" > file.yaml
 
 # Filter pod from all pods
@@ -36,11 +37,31 @@ kubectl -n <namespace> describe pod <pod-name> | grep -i error
 kubeclt -n <namespace> run <podname> --image=nginx --labels: project=best
 
 # create a pod that run a curl 
-kubectl run <podname> --restart=never --rm --image=nginx_alpine -i -- curl <endpoint>:<port>
+kubectl run <podname> --restart=never --rm --image=nginx:alpine -i -- curl <endpoint>:<port>
+kubectl run <podname> --restart=never --rm --image=nginx:alpine -i -- curl -m 5 <endpoint>:<port>
+
+# check external traffic with an existing pod using busybox normally
+kubectl -n <namespace> exec <podname> -- wget -o- www.google.com
+kubectl -n <namespace> --restart=never --rm --image=busybox -i -- wget -o- <endpoint>
 
 # get pod cluster ips
 kubectl -n <namespace> get pod -o wide
 
 # See mounts on pods
 kubectl -n <namespace> describe pod <pod-name> | grep -A2 Mounts:
+
+# Show labels
+kubectl -n <namespace> get pod --show-labels 
+
+# Select pod using labels 
+kubeclt -n <namespace> get pod -l <key>=<label>
+
+# Set a label for pods with other label
+kubeclt -n <namespace> label pod -l <key>=<existing-label> <key2>=<new-label>
+
+# Add an annotation to pod
+kubeclt -n <namespace> annotate pod -l <key>=<existing-label> <key2>=<new-label>
+
+# Check liveness on a pod
+kubectl -n <namespace> describe pod <pod-name> | grep Liveness
 

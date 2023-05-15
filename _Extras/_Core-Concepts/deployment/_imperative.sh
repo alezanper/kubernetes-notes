@@ -16,3 +16,6 @@ kubectl create deployment --image=nginx <deployment-name> --dry-run=client -o ya
 
 # Create a deployment on a specific namespace
 kubectl create deployment <deployment-name> --image=redis --replicas=2 --namespace=dev-ns
+
+# Edit a running deployment
+kubectl -n <namespace> edit deployment <deploy-name> 

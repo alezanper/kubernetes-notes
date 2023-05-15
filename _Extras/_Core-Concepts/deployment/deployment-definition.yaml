@@ -13,9 +13,22 @@ spec:
         app: myapp
         type: front-end
     spec:
+      serviceAccount: service-account-name
       containers:
       - name: nginx-container
         image: nginx
+        resources:
+          limits:
+            memory: 50Mi
+            cpu: 2
+          requests:
+            memory: 20Mi
+            cpu: 1
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 15
   replicas: 3
   selector:
     matchLabels:
