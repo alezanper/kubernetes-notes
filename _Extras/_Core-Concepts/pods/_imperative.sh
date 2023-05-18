@@ -39,10 +39,11 @@ kubeclt -n <namespace> run <podname> --image=nginx --labels: project=best
 # create a pod that run a curl 
 kubectl run <podname> --restart=Never --rm --image=nginx:alpine -i -- curl <endpoint>:<port>
 kubectl run <podname> --restart=Never --rm --image=nginx:alpine -i -- curl -m 5 <endpoint>:<port>
+kubectl run <podname> --restart=Never --rm --image=busybox -i -- wget -o- <endpoint>
+
 
 # check external traffic with an existing pod using busybox normally
 kubectl -n <namespace> exec <podname> -- wget -o- www.google.com
-kubectl -n <namespace> --restart=Never --rm --image=busybox -i -- wget -o- <endpoint>
 
 # get pod cluster ips
 kubectl -n <namespace> get pod -o wide
