@@ -37,12 +37,12 @@ kubectl -n <namespace> describe pod <pod-name> | grep -i error
 kubeclt -n <namespace> run <podname> --image=nginx --labels: project=best
 
 # create a pod that run a curl 
-kubectl run <podname> --restart=never --rm --image=nginx:alpine -i -- curl <endpoint>:<port>
-kubectl run <podname> --restart=never --rm --image=nginx:alpine -i -- curl -m 5 <endpoint>:<port>
+kubectl run <podname> --restart=Never --rm --image=nginx:alpine -i -- curl <endpoint>:<port>
+kubectl run <podname> --restart=Never --rm --image=nginx:alpine -i -- curl -m 5 <endpoint>:<port>
 
 # check external traffic with an existing pod using busybox normally
 kubectl -n <namespace> exec <podname> -- wget -o- www.google.com
-kubectl -n <namespace> --restart=never --rm --image=busybox -i -- wget -o- <endpoint>
+kubectl -n <namespace> --restart=Never --rm --image=busybox -i -- wget -o- <endpoint>
 
 # get pod cluster ips
 kubectl -n <namespace> get pod -o wide
@@ -65,3 +65,5 @@ kubeclt -n <namespace> annotate pod -l <key>=<existing-label> <key2>=<new-label>
 # Check liveness on a pod
 kubectl -n <namespace> describe pod <pod-name> | grep Liveness
 
+# Run bash from inside a pod
+kubectl exec -it pod-name -- /bin/bash
