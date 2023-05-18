@@ -11,11 +11,8 @@ eksctl get cluster
 # Create and Associate IAM OIDC Provider:
 eksctl utils associate-iam-oidc-provider --region us-east-1 --cluster myk8s --approve
 
-# Replace with region & cluster name
-eksctl utils associate-iam-oidc-provider --region us-east-1 --cluster myk8s --approve
-
 # Create Public Node Group   
-eksctl create nodegroup --cluster=myk8s --region=us-east-1 --name=eksdemo1-ng-public1 --node-type=t3.medium --nodes=1 --nodes-min=1 --nodes-max=2 --node-volume-size=20 --managed --asg-access --external-dns-access --full-ecr-access --appmesh-access --alb-ingress-access
+eksctl create nodegroup --cluster=myk8s --region=us-east-1 --name=myk8s-ng --node-type=t3.medium --nodes=1 --nodes-min=1 --nodes-max=2 --node-volume-size=20 --managed --asg-access --external-dns-access --full-ecr-access --appmesh-access --alb-ingress-access
 
 # Get nodes 
 kubectl get nodes -o wide
