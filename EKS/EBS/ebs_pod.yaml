@@ -1,14 +1,16 @@
+# This pod will run its code and then terminate
+# k8s will try to restart the pod again and again 
 ---
 apiVersion: v1
 kind: Pod
 metadata:
-  name: rng
+  name: write-hola-mundo
 spec:
   containers:
-  - image: alpine
+  - image: nginx
     name: alpine
-    command: ["/bin/sh", "-c"]
-    args: ["shuf -i 0-100 -n 1 >> /opt/var"]
+    command: ["/bin/bash", "-c"]
+    args: ["echo 'hola mundo' >> /opt/hola.txt"]
     volumeMounts:
     - mountPath: /opt
       name: data-volume
