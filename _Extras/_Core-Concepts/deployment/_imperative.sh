@@ -19,3 +19,5 @@ kubectl create deployment <deployment-name> --image=redis --replicas=2 --namespa
 
 # Edit a running deployment
 kubectl -n <namespace> edit deployment <deploy-name> 
+
+k create deploy webapp --image=kodekloud/webapp-color --replicas=3

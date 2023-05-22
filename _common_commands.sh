@@ -44,3 +44,9 @@ Here are some of the commonly used formats:
 -o namePrint only the resource name and nothing else.
 -o wideOutput in the plain-text format with any additional information.
 -o yamlOutput a YAML formatted API object.
+
+
+pod         v1
+replicaset  apps/v1     |   labels much match, if something change delete pods or recreate it
+services                |   check the domains instructions
+

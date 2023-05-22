@@ -68,3 +68,5 @@ kubectl -n <namespace> describe pod <pod-name> | grep Liveness
 
 # Run bash from inside a pod
 kubectl exec -it pod-name -- /bin/bash
+
+kubectl run pod <pod-name> --image=<image-name> --labels=<key>=<value>
