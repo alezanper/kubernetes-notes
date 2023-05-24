@@ -1,6 +1,9 @@
 # install helm
 sudo snap install helm --classic
 
+# add a repo
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
 # List helm releases
 helm -n <namespace> ls
 
@@ -28,5 +31,7 @@ helm -n <namespace> install <release-name> bitnami/apache --set replicaCount=2 -
 
 # List all releases even the broken ones
 helm -n <namespace> ls -a
+
+
 
 
