@@ -14,4 +14,4 @@ spec:
           containers:
             - name: reporting-tool
               image: reporting-tool
-          restartPolicy: Never
+          restartPolicy: Never    # OnFailure is available
