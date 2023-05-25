@@ -9,3 +9,7 @@ kubectl -n <namespace> get pod, job | grep <jobname>
 
 # describe job
 kubectl -n <namespace> describe job <jobname>
+
+kubectl get jobs
+
+kubectl logs <job_name>

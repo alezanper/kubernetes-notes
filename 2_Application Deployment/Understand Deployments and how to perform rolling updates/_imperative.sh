@@ -1,7 +1,3 @@
-kubectl get jobs
-
-kubectl logs <job_name>
-
 # Selectors 
 kubectl get pods --selector env=dev
 kubectl get pods --selector bu=finance
