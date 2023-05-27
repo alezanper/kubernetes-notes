@@ -12,3 +12,7 @@ kubectl run test --restart=Never --rm --image=busybox -i -- wget -o- <endpoint>
 # Run bash from inside a pod
 kubectl exec -it pod -- /bin/bash
 kubectl exec -it pod -- sh
+
+# Create secrets and configmaps
+kubectl create cm mycm --from-literal=key=value --from-literal=key2=value2
+kubectl create secret generic mysc --from-literal=key=value --from-literal=key2=value2

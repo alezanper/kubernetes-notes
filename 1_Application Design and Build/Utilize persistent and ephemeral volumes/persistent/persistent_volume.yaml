@@ -9,6 +9,6 @@ spec:
   accessModes:
     - ReadWriteOnce
   capacity:
-    store: 1Gi
+    storage: 1Gi
   hostPath:     # not recommended for production environments
     path: /tmp/data
