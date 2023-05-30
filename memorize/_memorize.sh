@@ -16,3 +16,25 @@ kubectl exec -it pod -- sh
 # Create secrets and configmaps
 kubectl create cm mycm --from-literal=key=value --from-literal=key2=value2
 kubectl create secret generic mysc --from-literal=key=value --from-literal=key2=value2
+
+# distribute credentials
+
+---
+env:
+- name: key
+  valueFrom:
+  configMapKeyRef:
+    name: configname
+    key: key
+
+---
+strategy:
+  rollingUpdate:
+    maxSurge: 1
+    maxUnavailable: 2
+  type: RollingUpdate
+
+---  
+resources:
+  requests:
+    cpu: ".2"
