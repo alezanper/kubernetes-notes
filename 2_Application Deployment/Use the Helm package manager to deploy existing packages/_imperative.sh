@@ -16,15 +16,15 @@ helm repo list
 # Helm repo update
 helm repo update
 
-# Search an helm repo
+# Search an helm chart in a repo
 helm search repo nginx
 
-# upgrade a release
+# upgrade a release using specific repo/chart
 helm -n <namespace> upgrade <release-name> bitnami/nginx
 
-# Check values from a package
+# Check values from a repo/chart to be able to customize
 helm show values bitnami/apache
-helm show values bitnami/apache | yq e
+helm show values bitnami/apache | yq e  # pass to yaml
 
 # install a customize version of apache
 helm -n <namespace> install <release-name> bitnami/apache --set replicaCount=2 --set image.debug=true
