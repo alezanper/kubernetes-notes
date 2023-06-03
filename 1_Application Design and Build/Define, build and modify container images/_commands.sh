@@ -18,3 +18,9 @@ docker run nginx:latest -p 8282:8080
 
 # Run a python container
 docker run python:3.6
+
+# Podman
+podman run -d --name <container-name> <registry>/<image>:<tag>
+
+# logs
+podman logs <container-name>
