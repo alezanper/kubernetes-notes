@@ -22,13 +22,14 @@ host:port/register
 
 ## post:
 Make a post call using this data:
+
 host:port/register
 
-body:
-{
-    "name": "Test User",
-    "email": "testuser@mail.com"
-}
+    body:
+    {
+        "name": "Test User",
+        "email": "testuser@mail.com"
+    }
 
 # Check database
 Connect to database to check the test user record was created
