@@ -20,9 +20,10 @@ eksctl create iamserviceaccount \
   --namespace=kube-system \
   --name=aws-load-balancer-controller \
   --role-name AmazonEKSLoadBalancerControllerRole \
-  --attach-policy-arn=arn:aws:iam::370710341537:policy/AWSLoadBalancerControllerIAMPolicy \
+  --attach-policy-arn=arn:aws:iam::534028821841:policy/AWSLoadBalancerControllerIAMPolicy \
   --approve
 
+# AWS ALB ingress controller renamed and redisigned to aws load balancer controller
 # Install load balancer controller with helm
 helm repo add eks https://aws.github.io/eks-charts
 helm repo update
