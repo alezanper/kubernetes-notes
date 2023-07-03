@@ -20,7 +20,7 @@ eksctl create iamserviceaccount \
   --namespace=kube-system \
   --name=aws-load-balancer-controller \
   --role-name AmazonEKSLoadBalancerControllerRole \
-  --attach-policy-arn=arn:aws:iam::534028821841:policy/AWSLoadBalancerControllerIAMPolicy \
+  --attach-policy-arn=arn:aws:iam::251589962883:policy/AWSLoadBalancerControllerIAMPolicy \
   --approve
 
 # AWS ALB ingress controller renamed and redisigned to aws load balancer controller
@@ -35,5 +35,5 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
 
 # Install app
 kubectl apply -f simple-app-deployment.yaml
-kubectl apply -f simple-app-service-clusterip.yaml
+kubectl apply -f simple-app-service-nodeport.yaml
 kubectl apply -f simple-app-ingress.yaml

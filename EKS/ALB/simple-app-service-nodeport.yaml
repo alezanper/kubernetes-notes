@@ -9,6 +9,7 @@ spec:
   - port: 80    # External port
     protocol: TCP
     targetPort: 8080  # Port on pod
+    nodePort: 30007
   selector:
     app: simple-app
-  type: ClusterIP
+  type: NodePort
