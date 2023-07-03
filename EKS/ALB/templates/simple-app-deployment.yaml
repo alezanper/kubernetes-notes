@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: simple-app
-        image: fabenavideso/simple-app
+        image: fabenavideso/simple-webapp:1.0.0-basic
         ports:
         - containerPort: 8080
