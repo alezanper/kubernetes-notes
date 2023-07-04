@@ -16,3 +16,5 @@ eksctl create nodegroup --cluster=myk8s --region=us-east-1 --name=myk8s-ng --nod
 
 # Get nodes 
 kubectl get nodes -o wide
+
+aws eks update-kubeconfig --region=us-east-1 --name=myk8s
