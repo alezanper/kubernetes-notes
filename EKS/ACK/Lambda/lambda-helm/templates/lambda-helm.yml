@@ -1,0 +1,39 @@
+
+apiVersion: lambda.services.k8s.aws/v1alpha1
+kind: Function
+metadata:
+  name: {{ include "lambda-helm.name" . }}
+  labels:
+    {{- include "lambda-helm.labels" . | nindent 4 }}
+  annotations:
+    services.k8s.aws/region: us-east-2
+spec:
+  name: {{ include "lambda-helm.name" . }}
+  code:
+    imageURI: "071646905294.dkr.ecr.us-east-2.amazonaws.com/hello-world:latest"
+  role: "arn:aws:iam::071646905294:role/service-role/lambda-test-role-9nz09t0s"
+  tags:
+    createdBy: someone
+    Application: "namespace"
+  description: {{ .Values.aws.lambda.description }}
+  memorySize: {{ .Values.aws.lambda.memorySize }}
+  timeout: {{ .Values.aws.lambda.timeout }}
+  reservedConcurrentExecutions: {{ .Values.aws.lambda.reservedConcurrentExecutions }}
+  packageType: Image
+
+
+---
+{{- if .Values.aws.lambda.url.enabled -}}
+apiVersion: lambda.services.k8s.aws/v1alpha1
+kind: FunctionURLConfig
+metadata:
+  name: {{ include "lambda-helm.name" . }}
+  labels:
+    {{- include "lambda-helm.labels" . | nindent 4 }}
+  annotations:
+    services.k8s.aws/region: us-east-2
+spec:
+  functionName: {{ include "lambda-helm.name" . }}
+  authType: {{ .Values.aws.lambda.url.authType }}
+
+{{- end }}

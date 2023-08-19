@@ -1,0 +1,15 @@
+aws:
+  lambda:
+    name: mro-lambda-example
+    packageType: Image
+    description: "Function created by ACK lambda-controller"
+    memorySize: 128
+    timeout: 3
+    reservedConcurrentExecutions: null
+    runtime: "python3.11"
+    vpcConfig:
+      securityGroupIDs: []
+      subnetIDs: []
+    url:
+      enabled: true
+      authType: "NONE"
